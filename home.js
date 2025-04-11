@@ -15,10 +15,37 @@ function showSlides() {
     slideIndex = 1; //slide.length = total images(slides) and the > means if user goes past the last slide then...slide Index = 1 reset to beginning
   } 
   slides[slideIndex - 1].style.display = "block"; //show(make visible) only the current slide
-  setTimeout(showSlides, 10000); // Change image every 3 seconds for autoplay
+  setTimeout(showSlides, 15000); // Change image every 3 seconds for autoplay
 }
 //function to change slide plusSlides(1) = next (-1) = back
 function plusSlides(n) {
   slideIndex += n ; //to move forward or backward  +/- 1  through slides
   showSlides();	//calls function again to show the correct slide after updating the index.
+}  
+
+
+//simulate falling leaves in page background
+const container = document.getElementById('leaf-container');
+
+function createLeaf() {
+  const leaf = document.createElement('div');
+  leaf.classList.add('leaf');
+
+
+//randomize horizontal start
+  leaf.style.left = Math.random() * 100 + 'vw';
+
+//randomize animation time
+  const duration = 5 + Math.random() * 5;
+  leaf.style.animationDuration = duration + 's';
+  leaf.style.animationDelay = Math.random() * 3 + 's';
+  container.appendChild(leaf);
+
+// Remove leaf after it falls
+  setTimeout(() => {
+    container.removeChild(leaf);
+  }, duration * 1000);
 }
+
+  //Create leaves every 1s
+  setInterval(createLeaf, 1000);
