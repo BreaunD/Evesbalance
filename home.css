@@ -9,7 +9,7 @@
     padding: 10px 20px;
     line-height: 100px; 
     padding: 10px 40px;
-    position: relative;
+   
     
 
 }
@@ -29,6 +29,7 @@
     
 .logo{
   height: 200px;
+  margin-bottom: -10%;
 
 }
     

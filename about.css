@@ -1,4 +1,82 @@
 *{
-    background-color: #50C879;
+    background-color: #253c2e;
+    color: rgb(255, 254, 247);
+}
+.header{ 
+    display: flex;
+    justify-content: space-between; /* logo left, cart right */
+    align-items: center;            /* vertically center */
+    padding: 10px 20px;
+    line-height: 100px; 
+    padding: 10px 40px;
+    position: relative;
+    
+
+}
+.header-right{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    gap: 15px; /* space between sign-in and cart */
+
+}
+.header-left{
+    display: flex;
+    transform: translateX(65%);
+    justify-content: center;
+    z-index: 1;
+}
+    
+.logo{
+  height: 200px;
+  margin-bottom: -10%;
+
+}
+    
+
+.sign-in-btn{
+    padding: 8px 16px;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    color:white;
+    font-size: 18px;
+    background-color: darkgreen;
+}
+.cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+.cart-icon{
+    max-width: 50px;
+ 
+}
+
+.sign-in-btn:hover{
+    color:darkgreen;
+    background-color: white;
+}
+
+nav{
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom:20px;
+    position:relative;
+    z-index: 2;
+}
+
+a{
+    text-decoration: none;
+}
+nav a:hover{
     color: darkgreen;
+    background-color: #b2ac88;
+}
+
+h1,p{
+    text-align: center;
 }
