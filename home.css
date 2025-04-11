@@ -1,0 +1,69 @@
+*{
+    background-color: #50C879;
+    color: darkgreen;
+}
+.header{ 
+    height: 100px; /* the height of logo img */
+    line-height: 100px; 
+    text-align: center; /* Horizontally center the logo img(box logo lives in) */
+
+}
+.header img{
+    vertical-align: middle; /* Handle some alignment edge cases */
+}
+.header a{
+    text-align:right;
+    size: 20px;
+    font-weight: bold;
+}
+header a:hover{
+    color:darkgreen;
+    background-color: #b2ac88;
+}
+
+nav{
+    font: size 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+a{
+    text-decoration: none;
+}
+nav a:hover{
+    color: darkgreen;
+    background-color: #b2ac88;
+}
+
+.slideshow{ /* slideshow with alittle .js to show control of visuals and autoplay */
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+  
+.mySlides{  /*slideshow images*/
+    display: none;
+    width: 100%;
+}
+  
+button.prev, button.next{ /* pointer buttons to control the sliders*/
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    font-weight: bold;
+    transform: translateY(-50%);
+}
+ /*slide show button placement*/ 
+.prev{ 
+    left: 0;
+}
+
+.next{ 
+    right: 0; 
+}
