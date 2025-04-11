@@ -15,7 +15,7 @@ function showSlides() {
     slideIndex = 1; //slide.length = total images(slides) and the > means if user goes past the last slide then...slide Index = 1 reset to beginning
   } 
   slides[slideIndex - 1].style.display = "block"; //show(make visible) only the current slide
-  setTimeout(showSlides, 3000); // Change image every 3 seconds for autoplay
+  setTimeout(showSlides, 10000); // Change image every 3 seconds for autoplay
 }
 //function to change slide plusSlides(1) = next (-1) = back
 function plusSlides(n) {

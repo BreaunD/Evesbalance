@@ -1,32 +1,73 @@
 *{
-    background-color: #50C879;
-    color: darkgreen;
+    background-color: #253c2e;
+    color: rgb(255, 254, 247);
 }
 .header{ 
-    height: 100px; /* the height of logo img */
+    display: flex;
+    justify-content: space-between; /* logo left, cart right */
+    align-items: center;            /* vertically center */
+    padding: 10px 20px;
     line-height: 100px; 
-    text-align: center; /* Horizontally center the logo img(box logo lives in) */
+    padding: 10px 40px;
+    position: relative;
+    
 
 }
-.header img{
-    vertical-align: middle; /* Handle some alignment edge cases */
+.header-right{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    gap: 15px; /* space between sign-in and cart */
+
 }
-.header a{
-    text-align:right;
-    size: 20px;
+.header-left{
+    display: flex;
+    transform: translateX(65%);
+    justify-content: center;
+    z-index: 1;
+}
+    
+.logo{
+  height: 200px;
+
+}
+    
+
+.sign-in-btn{
+    padding: 8px 16px;
+    border: 1px solid #000;
+    cursor: pointer;
     font-weight: bold;
+    border-radius: 4px;
+    color:white;
+    font-size: 18px;
+    background-color: darkgreen;
 }
-header a:hover{
+.cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+.cart-icon{
+    max-width: 50px;
+ 
+}
+
+.sign-in-btn:hover{
     color:darkgreen;
-    background-color: #b2ac88;
+    background-color: white;
 }
 
 nav{
-    font: size 24px;
+    font-size: 32px;
     text-align: center;
     font-weight: bold;
     margin-bottom:20px;
+    position:relative;
+    z-index: 2;
 }
+
 a{
     text-decoration: none;
 }
@@ -37,14 +78,15 @@ nav a:hover{
 
 .slideshow{ /* slideshow with alittle .js to show control of visuals and autoplay */
     position: relative;
-    max-width: 100%;
+    max-width: 25%;
     margin: auto;
     overflow: hidden;
 }
   
 .mySlides{  /*slideshow images*/
     display: none;
-    width: 100%;
+    width: 25%;
+    align-content: center;
 }
   
 button.prev, button.next{ /* pointer buttons to control the sliders*/
