@@ -1,202 +1,332 @@
+
 @font-face {
-    font-family:'Sweet Sensations Personal Use';
-    src: url('Sweet-Sensations-Personal-Use/Sweet Sensations Personal Use.ttf') format('truetype');
-}
-*{
-    background-color: #253c2e;
-    color: rgb(255, 254, 247);
-}
-/*body{
-    font-family: 'Sweet Sensations Personal Use', sans-serif;
-    -webkit-text-stroke: 1.5px #065521;
-    letter-spacing: 5px;
-    
-}*/
-
-.header{ 
-    display: flex;
-    justify-content: space-between; /* logo left, cart right */
-    align-items: center;            /* vertically center */
-    padding: 10px 20px;
-    line-height: 100px; 
-    padding: 10px 40px;
-    position: relative;
-    z-index: 1;
-    background-color: transparent;
-    
-
-}
-.header-left,.header-right{
-    display:flex;
-    flex: 1;
-    align-items: center;
-    background-color: transparent;
-
-}
-.header-left{
-    justify-content: flex-start;
-}
-.header-right{
-    width: 250px;
-    gap: 15px; /* space between sign-in and cart */
-    justify-content: flex-end;
+  font-family: 'Sweet Sensations Personal Use';
+  src: url('Sweet-Sensations-Personal-Use/Sweet Sensations Personal Use.ttf') format('truetype');
 }
 
-.logo-container{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    justify-content: center;
-    background-color: transparent;
-   
+* {
+  background-color: transparent;
+  color: rgb(255, 254, 247);
 }
-    
-.logo{
+
+body {
+  background-color: #253c2e;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  line-height: 100px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.header-left, .header-right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background-color: transparent;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  width: 250px;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  background-color: transparent;
+}
+
+.logo {
   height: 200px;
   margin-bottom: -10%;
   object-fit: contain;
   z-index: 1;
   background-color: transparent;
-
 }
-    
 
-.sign-in-btn{
-    padding: 8px 16px;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    color:white;
-    font-size: 18px;
-    background-color: darkgreen;
+.sign-in-btn {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  background-color: darkgreen;
 }
+
 .cart-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-.cart-icon{
-    max-width: 50px;
- 
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.sign-in-btn:hover{
-    color:darkgreen;
-    background-color: white;
+.cart-icon {
+  max-width: 50px;
 }
 
-nav{
-    font-size: 50px;
-    font-weight: 200;
-    text-align: center;
-    margin-bottom:20px;
-    position:relative;
-    z-index: 1;
-    font-family: 'Sweet Sensations Personal Use', sans-serif;
-    -webkit-text-stroke: 1.5px #065521;
-    letter-spacing: 3px;
-    background-color: transparent;
-    
+.sign-in-btn:hover {
+  color: darkgreen;
+  background-color: white;
 }
 
-a{
-    text-decoration: none;
-    background-color: transparent;
-}
-nav a:hover{
-    color: #1d911d;
-    
-    
-}
-
-.slideshow{ /* slideshow with alittle .js to show control of visuals and autoplay */
-
-    position: relative;
-    width: 100vw;
-    height:400px;
-    margin: auto;
-    overflow: hidden;
-    z-index: 1;
-}
-  
-.mySlides{  /*slideshow images*/
-    display: none;
-    width: 100%;
-    height:100%;
-    align-content: center;
-    object-fit:cover;
-}
-  
-button.prev, button.next{ /* pointer buttons to control the sliders*/
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 1rem;
-    color: white;
-    background-color: rgba(0,0,0,0.5);
-    border: none;
-    font-weight: bold;
-    transform: translateY(-50%);
-}
- /*slide show button placement*/ 
-.prev{ 
-    left: 0;
+nav {
+  font-size: 50px;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  font-family: 'Sweet Sensations Personal Use', sans-serif;
+  -webkit-text-stroke: 1.5px #065521;
+  letter-spacing: 3px;
+  background-color: transparent;
 }
 
-.next{ 
-    right: 0; 
-}
-h2,p{
-    position: relative;
-    text-align: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    z-index: 1;
-    background-color: transparent;
-    
+a {
+  text-decoration: none;
+  background-color: transparent;
 }
 
-
-h2{
-    font-size: 36px;
-}
-p{
-    font-size: 24px;
+nav a:hover {
+  color: #1d911d;
 }
 
+h1, h2, p {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
-/*leaves floating*/
+h1, h2 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 24px;
+}
+
+/* =============================================
+   SLIDESHOW
+   ============================================= */
+.slide-show {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  margin: auto;
+  object-fit: contain;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  object-fit: cover;
+}
+
+button.prev, button.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1rem;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  font-weight: bold;
+  transform: translateY(-50%);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+/* =============================================
+   HERO CTA
+   ============================================= */
+.hero-cta {
+  padding: 60px 20px 40px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.hero-cta h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-cta p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+.cta-btn {
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background-color: transparent;
+}
+
+.cta-book {
+  background-color: darkgreen;
+  color: white;
+  border: 2px solid darkgreen;
+}
+
+.cta-book:hover {
+  background-color: white;
+  color: darkgreen;
+}
+
+.cta-shop {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-shop:hover {
+  background-color: white;
+  color: #253c2e;
+}
+
+/* =============================================
+   SERVICES SECTION
+   ============================================= */
+.services-section {
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+.service-card {
+  width: 280px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 12px;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card p {
+  font-size: 18px;
+  margin: 10px 0 0;
+  background-color: transparent;
+}
+
+/* =============================================
+   GALLERY SECTION
+   ============================================= */
+.gallery-section {
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* =============================================
+   FALLING LEAVES
+   ============================================= */
 #leaf-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Don't block clicks */
-    overflow: hidden;
-    z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through — don't block UI */
+  overflow: hidden;
+  z-index: 0;
 }
-  
+
 .leaf {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background-image: url('images/leaf.png'); /* Replace with your leaf image */
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: fall linear infinite;
-    border-radius: 5%;
+  position: absolute;
+  background-image: url('images/leaf.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear infinite;
+  border-radius: 5%;
 }
-  
+
+/*
+  KEYFRAMES — 3 phases:
+  0%   → spawns invisible at top (opacity 0) — the fade-IN
+  15%  → fully visible — leaf has "arrived"
+  100% → fades out as it hits the bottom
+*/
 @keyframes fall {
-    0% {
-      transform: translateY(-100px) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0.5;
-    }
+  0% {
+    transform: translateY(-120px) rotate(0deg);
+    opacity: 0;
   }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

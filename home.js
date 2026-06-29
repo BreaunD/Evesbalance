@@ -1,51 +1,93 @@
-//style.display is .js way of controlling whether or not an HTML element is visible on page by directly changing the css display property of that element 
-//variables for slideshow 
-let slideIndex = 0; //keeps track of slide to show
-showSlides();//calls the function on page load
+// =============================================
+// SLIDESHOW — fixed timer stacking bug
+// =============================================
 
-// loop function for slide movement , hides the slides and show the one at slideIndex (which ever image number)
+let slideIndex = 0;
+let slideTimer = null; // store timer so we can clear it before resetting
+
+showSlides();
+
 function showSlides() {
-  let slides = document.getElementsByClassName("mySlides"); /* variable set to the images in html */
-  for (let slide of slides) {   // this is a "for of" loop that goes through each new variable named "slide"(image) in the "slides"(imagefolder basically) collection and hides it 
-    slide.style.display = "none"; //tells browser to hide that slide
+  // Clear any existing timer FIRST — this is the fix for the speed bug
+  // Every time this function ran before, it stacked a new timer on top
+  // of the old one. clearTimeout kills the old one before making a new one.
+  clearTimeout(slideTimer);
+
+  const slides = document.getElementsByClassName("mySlides");
+
+  for (let slide of slides) {
+    slide.style.display = "none";
   }
-  slideIndex++; /*next image*/
 
-  if (slideIndex > slides.length) { 
-    slideIndex = 1; //slide.length = total images(slides) and the > means if user goes past the last slide then...slide Index = 1 reset to beginning
-  } 
-  slides[slideIndex - 1].style.display = "block"; //show(make visible) only the current slide
-  setTimeout(showSlides, 15000); // Change image every 3 seconds for autoplay
+  slideIndex++;
+
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+
+  // Store the timeout reference — now only ONE timer ever exists at a time
+  slideTimer = setTimeout(showSlides, 5000);
 }
-//function to change slide plusSlides(1) = next (-1) = back
+
 function plusSlides(n) {
-  slideIndex += n ; //to move forward or backward  +/- 1  through slides
-  showSlides();	//calls function again to show the correct slide after updating the index.
-}  
+  slideIndex += n;
+
+  // Boundary check manually since we're bypassing the auto-increment
+  const slides = document.getElementsByClassName("mySlides");
+
+  if (slideIndex > slides.length) slideIndex = 1;
+  if (slideIndex < 1) slideIndex = slides.length;
+
+  // Clear auto timer and reset from this new position
+  clearTimeout(slideTimer);
+
+  for (let slide of slides) {
+    slide.style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+
+  // Restart the auto-timer from this slide
+  slideTimer = setTimeout(showSlides, 5000);
+}
 
 
-//simulate falling leaves in page background
+// =============================================
+// FALLING LEAVES — fade in on spawn, fade out on fall
+// =============================================
+
 const container = document.getElementById('leaf-container');
 
 function createLeaf() {
   const leaf = document.createElement('div');
   leaf.classList.add('leaf');
 
-
-//randomize horizontal start
+  // Random horizontal start position
   leaf.style.left = Math.random() * 100 + 'vw';
 
-//randomize animation time
-  const duration = 5 + Math.random() * 5;
+  // Random fall duration between 6–12s — slower feels more natural
+  const duration = 6 + Math.random() * 6;
   leaf.style.animationDuration = duration + 's';
-  leaf.style.animationDelay = Math.random() * 3 + 's';
+
+  // Random delay so they don't all spawn in sync
+  leaf.style.animationDelay = Math.random() * 4 + 's';
+
+  // Random size — smaller leaves look way better (80–140px)
+  const size = 80 + Math.random() * 60;
+  leaf.style.width = size + 'px';
+  leaf.style.height = size + 'px';
+
   container.appendChild(leaf);
 
-// Remove leaf after it falls
+  // Remove leaf after animation finishes — duration + delay + small buffer
   setTimeout(() => {
-    container.removeChild(leaf);
-  }, duration * 1000);
+    if (container.contains(leaf)) {
+      container.removeChild(leaf);
+    }
+  }, (duration + 4) * 1000);
 }
 
-  //Create leaves every 1s
-  setInterval(createLeaf, 1000);
+// Spawn a leaf every 1.5s — was 1s before, slightly less dense feels cleaner
+setInterval(createLeaf, 1500);

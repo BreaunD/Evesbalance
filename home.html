@@ -8,32 +8,99 @@
     <link rel="stylesheet" href="home.css">
   </head>
   <body>
-    <header>
-        <div class="header">
-          <img src="images\LogoNB.png.png" alt="Logo" class="logo">
-          <a href="signup.html">Sign In</a>   | 
-          <img src="images\cart.png" alt="Logo" class="cart">
-        </div>
-        
-      </header>
-      <nav>
-          <a href="">HOME</a>   |
-          <a href="">SCHEDULE</a>   
-          <a href="">PRODUCTS</a>   |
-          <a href="">ABOUT</a>   |
-        </nav> 
-        <hr>
-        <div class="slide-show">
-            <img class="mySlides" src="" /> 
-            <img class="mySlides" src="image2.jpg" />
-            <img class="mySlides" src="image3.jpg" />
-             <!--this is class for .cc and .js and onclick attribute for .js function that controls slides when pressed. basically shorcut for EL-->
-            <button class="prev" onclick="plusSlides(-1)">❮</button>
-            <button class="next" onclick="plusSlides(1)">❯</button>
-         
-        </div>
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eve's Balance</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
 
-        <div class="product-grid"></div>
+    <!-- Falling leaves layer — fixed overlay, sits behind everything -->
+    <div id="leaf-container"></div>
+
+    <header class="header">
+      <div class="header-left"></div>
+
+      <div class="logo-container">
+        <a href="home.html">
+          <img src="images/LogoNB.png" alt="Logo" class="logo">
+        </a>
+      </div>
+
+      <div class="header-right">
+        <a href="signup.html">Sign In</a>
+        <button class="cart-btn">
+          <img src="images/cart.png" alt="cart" class="cart-icon">
+        </button>
+      </div>
+    </header>
+
+    <nav>
+      <a href="home.html">HOME</a> |
+      <a href="schedule.html">SCHEDULE</a> |
+      <a href="products.html">PRODUCTS</a> |
+      <a href="about.html">ABOUT</a>
+    </nav>
+
+    <hr>
+
+    <!-- Slideshow -->
+    <div class="slide-show">
+      <img class="mySlides" src="images\crystal.jpeg" />
+      <img class="mySlides" src="images\magic.jpeg" />
+      <img class="mySlides" src="images\fullfacelogo.jpeg" />
+      <!-- Nav arrows -->
+      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+
+    <!-- Hero CTA Section -->
+    <section class="hero-cta">
+      <h2>Eve's Balance</h2>
+      <p>"Beauty Rooted in Care, Energy, and Style—Where Locs and Holistic Creations Unite to Embrace Your Essence."</p>
+      <div class="cta-buttons">
+        <a href="schedule.html" class="cta-btn cta-book">Book a Hair Appointment</a>
+        <a href="products.html" class="cta-btn cta-shop">Shop Holistic Creations</a>
+      </div>
+    </section>
+
+    <!-- Services Photo Section -->
+    <section class="services-section">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="images/service1.jpg" alt="Loc Service">
+          <p>Loc Maintenance</p>
+        </div>
+        <div class="service-card">
+          <img src="images/service2.jpg" alt="Styling">
+          <p>Styling & Sets</p>
+        </div>
+        <div class="service-card">
+          <img src="images/service3.jpg" alt="Natural Hair">
+          <p>Natural Hair Care</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Creations Gallery -->
+    <section class="gallery-section">
+      <h2>Recent Creations</h2>
+      <div class="gallery-grid">
+        <img src="images/creation1.jpg" alt="Creation 1">
+        <img src="images/creation2.jpg" alt="Creation 2">
+        <img src="images/creation3.jpg" alt="Creation 3">
+        <img src="images/creation4.jpg" alt="Creation 4">
+        <img src="images/creation5.jpg" alt="Creation 5">
+        <img src="images/creation6.jpg" alt="Creation 6">
+      </div>
+    </section>
+
+    <div class="product-grid"></div>
 
 
     <script src="home.js"></script>
