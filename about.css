@@ -84,6 +84,7 @@ nav{
 
 a{
     text-decoration: none;
+    background-color: transparent;
 }
 nav a:hover{
     color: darkgreen;
@@ -102,9 +103,8 @@ h1{
 p{
     font-size: 24px;
 }
-/* =============================================
-   FALLING LEAVES
-   ============================================= */
+/* FALLING LEAVES */
+
 #leaf-container {
   position: fixed;
   top: 0;
@@ -124,6 +124,13 @@ p{
   animation: fall linear infinite;
   border-radius: 5%;
 }
+
+.fullface {
+  display: block;
+  margin: 20px auto;
+  max-width: 35%;
+  height: auto;
+}   
 
 /*
   KEYFRAMES — 3 phases:
