@@ -6,31 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="shared.css">
+
   </head>
   <body>
+    <!-- Falling leaves layer — fixed overlay, sits behind everything -->
+    <div id="leaf-container"></div>
+
     <header class="header">
       <div class="header-left"></div>
       
       <div class="logo-container">
-        <a href="home.html">
+        <a href=".html">
           <img src="images\LogoNB.png" alt="Logo" class="logo">
         </a>
       </div>
 
-      <div class="header-right">
-        <button class="sign-in-btn">Sign In</button>  | 
-        <button class="cart-btn">
-          <img src="images\cart.png" alt="cart" class="cart-icon">
+      <div class="header-right">| 
+        <button class="cart-btn" onclick="openCart()">
+        <!-- SVG shopping bag icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <!-- Badge — shows item count, hidden when 0 -->
+        <span id="cart-badge"></span>
         </button>
       </div>
       
     </header>
-      <nav>
-          <a href="home.html">Home</a>   |
-          <a href="">Schedule</a>   |
-          <a href="">Products</a>   |
-          <a href="about.html">About</a>   
-        </nav> 
+     <nav>
+      <a href="home.html">Home</a> |
+      <a href="schedule.html">Schedule</a> |
+      <a href="products.html">Products</a> |
+      <a href="about.html">About</a>
+    </nav>
         <hr>
     <h1>Eve's Vision:</h1>
     <p>Eve’s balance is a one-stop shop for scheduling loc appointments and purchasing handmade holistic/spiritual creations 
@@ -41,6 +52,30 @@
 
         “Eve’s Balance Slogan: Beauty Rooted in Care, Energy, and Style—Where Locs and Holistic Creations Unite to Embrace Your Essence.”
         </p>
-    <script src="index.js"></script>
+
+    <!-- Dark overlay behind slideout -->
+    <div id="cart-overlay" onclick="closeCart()"></div>
+ 
+    <!-- Slideout panel -->
+    <div id="cart-slideout">
+      <div class="cart-header">
+       <h3>Your Cart</h3>
+      <button class="cart-close-btn" onclick="closeCart()">✕</button>
+    </div>
+ 
+      <!-- Cart items render here dynamically via shared.js -->
+      <div id="cart-items"></div>
+ 
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+      </div>
+    </div>
+
+    
+    <script src="shared.js"></script>
   </body>
 </html>

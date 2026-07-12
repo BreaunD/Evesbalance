@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eve's Balance</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="checkout.css">
     <link rel="stylesheet" href="shared.css">
   </head>
   <body>
@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eve's Balance</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="checkout.css">
     <link rel="stylesheet" href="shared.css">
   </head>
   <body>
@@ -57,60 +57,41 @@
 
     <hr>
 
-    <!-- Slideshow -->
-    <div class="slide-show">
-      <img class="mySlides" src="images/crystal.jpeg" />
-      <img class="mySlides" src="images/magic.jpeg" />
-      <img class="mySlides" src="images/fullfacelogo.jpeg" />
-      <!-- Nav arrows -->
-      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-      <button class="next" onclick="plusSlides(1)">&#10095;</button>
-    </div>
-
-    <!-- Hero CTA Section -->
-    <section class="hero-cta">
-      <h2>Eve's Balance</h2>
-      <p>"Beauty Rooted in Care, Energy, and Style—Where Locs and Holistic Creations Unite to Embrace Your Essence."</p>
-      <div class="cta-buttons">
-        <a href="schedule.html" class="cta-btn cta-book">Book a Hair Appointment</a>
-        <a href="products.html" class="cta-btn cta-shop">Shop Holistic Creations</a>
-      </div>
+    <section class="checkout-hero">
+      <h2>Checkout</h2>
+      <p>Review your order below then proceed to secure payment via Square.</p>
     </section>
-
-    <!-- Services Photo Section -->
-    <section class="services-section">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="images/service1.jpg" alt="Loc Service">
-          <p>Loc Maintenance</p>
+ 
+    <section class="checkout-section">
+ 
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="checkout-items">
+          <!-- Rendered by checkout.js -->
         </div>
-        <div class="service-card">
-          <img src="images/service2.jpg" alt="Styling">
-          <p>Styling & Sets</p>
-        </div>
-        <div class="service-card">
-          <img src="images/service3.jpg" alt="Natural Hair">
-          <p>Natural Hair Care</p>
+        <div class="order-total-row">
+          <span>Total</span>
+          <span id="checkout-total">$0.00</span>
         </div>
       </div>
-    </section>
-
-    <!-- Recent Creations Gallery -->
-    <section class="gallery-section">
-      <h2>Recent Creations</h2>
-      <div class="gallery-grid">
-        <img src="images/creation1.jpg" alt="Creation 1">
-        <img src="images/creation2.jpg" alt="Creation 2">
-        <img src="images/creation3.jpg" alt="Creation 3">
-        <img src="images/creation4.jpg" alt="Creation 4">
-        <img src="images/creation5.jpg" alt="Creation 5">
-        <img src="images/creation6.jpg" alt="Creation 6">
+ 
+      <!-- Empty cart state -->
+      <div id="empty-cart-msg" style="display:none; text-align:center; padding: 40px;">
+        <p>Your cart is empty.</p>
+        <a href="products.html" class="back-to-shop-btn">Back to Shop</a>
       </div>
+ 
+      <!-- Pay Now button — hidden until items confirmed -->
+      <div class="pay-now-wrap" id="pay-now-wrap">
+        <p class="secure-note">🔒 Secure checkout powered by Square</p>
+        <button class="pay-now-btn" onclick="redirectToSquare()">
+          Pay Now
+        </button>
+        <a href="products.html" class="continue-shopping">← Continue Shopping</a>
+      </div>
+ 
     </section>
-
-    <div class="product-grid"></div>
-
     <!-- Dark overlay behind slideout -->
     <div id="cart-overlay" onclick="closeCart()"></div>
  
@@ -134,6 +115,6 @@
     </div>
 
     <script src="shared.js"></script>
-    <script src="home.js"></script>
+    <script src="checkout.js"></script>
   </body>
 </html>

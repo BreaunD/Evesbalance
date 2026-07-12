@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eve's Balance</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="shared.css">
+  </head>
+  <body>
+
+    <!-- Falling leaves layer — fixed overlay, sits behind everything -->
+    <div id="leaf-container"></div>
+
+    <header class="header">
+      <div class="header-left"></div>
+
+      <div class="logo-container">
+        <a href="home.html">
+          <img src="images/LogoNB.png" alt="Logo" class="logo">
+        </a>
+      </div>
+
+      <div class="header-right">
+          <button class="cart-btn" onclick="openCart()">
+          <!-- SVG shopping bag icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <!-- Badge — shows item count, hidden when 0 -->
+          <span id="cart-badge"></span>
+          </button>
+      </div>
+    </header>
+
+    <nav>
+      <a href="home.html">Home</a> |
+      <a href="schedule.html">Schedule</a> |
+      <a href="products.html">Products</a> |
+      <a href="about.html">About</a>
+    </nav>
+      <hr>
+
+ 
+    <section class="products-hero">
+      <h2>Holistic Creations</h2>
+      <p>Handmade spiritual and holistic pieces — candles, crystals, and more.<br>
+      New inventory dropping soon.</p>
+    </section>
+ 
+    <!-- Product Grid -->
+    <section class="products-section">
+      <div class="products-grid">
+ 
+        <!-- PLACEHOLDER CARDS — replace with real products when ready -->
+        <!-- To activate a card: remove "sold-out" class, update name/price/id -->
+        <!-- Then wire the button: onclick="addToCart('id', 'name', price)" -->
+ 
+        <div class="product-card sold-out">
+          <div class="product-img-wrap">
+            <img src="images/creation1.jpg" alt="Coming Soon">
+            <div class="sold-out-overlay">
+              <span>Check Back Soon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Intention Candle</h3>
+            <p class="product-price">—</p>
+            <button class="add-to-cart-btn" disabled>Coming Soon</button>
+          </div>
+        </div>
+ 
+        <div class="product-card sold-out">
+          <div class="product-img-wrap">
+            <img src="images/creation2.jpg" alt="Coming Soon">
+            <div class="sold-out-overlay">
+              <span>Check Back Soon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Crystal Set</h3>
+            <p class="product-price">—</p>
+            <button class="add-to-cart-btn" disabled>Coming Soon</button>
+          </div>
+        </div>
+ 
+        <div class="product-card sold-out">
+          <div class="product-img-wrap">
+            <img src="images/creation3.jpg" alt="Coming Soon">
+            <div class="sold-out-overlay">
+              <span>Check Back Soon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Spiritual Bundle</h3>
+            <p class="product-price">—</p>
+            <button class="add-to-cart-btn" disabled>Coming Soon</button>
+          </div>
+        </div>
+ 
+        <div class="product-card sold-out">
+          <div class="product-img-wrap">
+            <img src="images/creation4.jpg" alt="Coming Soon">
+            <div class="sold-out-overlay">
+              <span>Check Back Soon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Herb & Oil Kit</h3>
+            <p class="product-price">—</p>
+            <button class="add-to-cart-btn" disabled>Coming Soon</button>
+          </div>
+        </div>
+ 
+        <div class="product-card sold-out">
+          <div class="product-img-wrap">
+            <img src="images/creation5.jpg" alt="Coming Soon">
+            <div class="sold-out-overlay">
+              <span>Check Back Soon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Healing Stone</h3>
+            <p class="product-price">—</p>
+            <button class="add-to-cart-btn" disabled>Coming Soon</button>
+          </div>
+        </div>
+ 
+        <div class="product-card sold-out">
+          <div class="product-img-wrap">
+            <img src="images/creation6.jpg" alt="Coming Soon">
+            <div class="sold-out-overlay">
+              <span>Check Back Soon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Ritual Kit</h3>
+            <p class="product-price">—</p>
+            <button class="add-to-cart-btn" disabled>Coming Soon</button>
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+
+  <!-- Dark overlay behind slideout -->
+    <div id="cart-overlay" onclick="closeCart()"></div>
+ 
+    <!-- Slideout panel -->
+    <div id="cart-slideout">
+      <div class="cart-header">
+       <h3>Your Cart</h3>
+      <button class="cart-close-btn" onclick="closeCart()">✕</button>
+      </div>
+ 
+      <!-- Cart items render here dynamically via shared.js -->
+      <div id="cart-items"></div>
+ 
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+      </div>
+    </div>
+
+
+    <script src="shared.js"></script>
+    <script src="products.js"></script>
+  </body>
+</html>

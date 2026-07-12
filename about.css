@@ -3,38 +3,43 @@
     src: url('Sweet-Sensations-Personal-Use/Sweet Sensations Personal Use.ttf') format('truetype');
 }
 
-*{
-    background-color: #253c2e;
-    color: rgb(255, 254, 247);
+* {
+  background-color: transparent;
+  color: rgb(255, 254, 247);
 }
 
-.header{ 
-    display: flex;
-    justify-content: space-between; /* logo left, cart right */
-    align-items: center;            /* vertically center */
-    padding: 10px 20px;
-    line-height: 100px; 
-    padding: 10px 40px;
-    position: relative;
-   
-    
+body {
+  background-color: #253c2e;
+  min-height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  line-height: 100px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  min-height: 120px; /* Ensure header has a minimum height to accommodate the logo */
 
 }
-.header-left,.header-right{
-    display:flex;
-    flex: 1;
-    align-items: center;
 
-}
-.header-left{
-    justify-content: flex-start;
-}
-.header-right{
-    width: 250px;
-    gap: 15px; /* space between sign-in and cart */
-    justify-content: flex-end;
+.header-left, .header-right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background-color: transparent;
 }
 
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  gap: 15px;
+  justify-content: flex-end;
+}
 .logo-container{
     position: absolute;
     left: 50%;
@@ -52,17 +57,6 @@
 
 }
     
-
-.sign-in-btn{
-    padding: 8px 16px;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    color:white;
-    font-size: 18px;
-    background-color: darkgreen;
-}
 .cart-btn {
     background: none;
     border: none;
@@ -72,11 +66,6 @@
 .cart-icon{
     max-width: 50px;
  
-}
-
-.sign-in-btn:hover{
-    color:darkgreen;
-    background-color: white;
 }
 
 
@@ -112,4 +101,72 @@ h1{
 }
 p{
     font-size: 24px;
+}
+/* =============================================
+   FALLING LEAVES
+   ============================================= */
+#leaf-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through — don't block UI */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  background-image: url('images/leaf.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear infinite;
+  border-radius: 5%;
+}
+
+/*
+  KEYFRAMES — 3 phases:
+  0%   → spawns invisible at top (opacity 0) — the fade-IN
+  15%  → fully visible — leaf has "arrived"
+  100% → fades out as it hits the bottom
+*/
+@keyframes fall {
+  0% {
+    transform: translateY(-120px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .logo-container {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right {
+    justify-content: center;
+    width: 100%;
+  }
 }

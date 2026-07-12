@@ -1,5 +1,166 @@
-*{
-    background-color: #253c2e;
-    color: rgb(255, 254, 247);
-    font-size: 36px;
+@font-face {
+  font-family: 'Sweet Sensations Personal Use';
+  src: url('Sweet-Sensations-Personal-Use/Sweet Sensations Personal Use.ttf') format('truetype');
+}
+
+* {
+  background-color: transparent;
+  color: rgb(255, 254, 247);
+}
+
+body {
+  background-color: #253c2e;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  line-height: 100px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.header-left, .header-right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background-color: transparent;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  width: 250px;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  background-color: transparent;
+}
+
+.logo {
+  height: 200px;
+  margin-bottom: -10%;
+  object-fit: contain;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.sign-in-btn {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  background-color: darkgreen;
+}
+
+.cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon {
+  max-width: 50px;
+}
+
+.sign-in-btn:hover {
+  color: darkgreen;
+  background-color: white;
+}
+
+nav {
+  font-size: 50px;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  font-family: 'Sweet Sensations Personal Use', sans-serif;
+  -webkit-text-stroke: 1.5px #065521;
+  letter-spacing: 3px;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+nav a:hover {
+  color: #1d911d;
+}
+
+h1, h2, p {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1, h2 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 24px;
+}
+
+
+/* =============================================
+   FALLING LEAVES
+   ============================================= */
+#leaf-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through — don't block UI */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  background-image: url('images/leaf.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear infinite;
+  border-radius: 5%;
+}
+
+/*
+  KEYFRAMES — 3 phases:
+  0%   → spawns invisible at top (opacity 0) — the fade-IN
+  15%  → fully visible — leaf has "arrived"
+  100% → fades out as it hits the bottom
+*/
+@keyframes fall {
+  0% {
+    transform: translateY(-120px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
