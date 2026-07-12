@@ -1,14 +1,5 @@
 
-/* =============================================
-   SHARED.CSS — Eve's Balance
-   Cart slideout, badge, overlay
-   Import this on every page that has a cart
-   ============================================= */
- 
- 
-/* =============================================
-   CART ICON + BADGE (goes in header)
-   ============================================= */
+ /* CART ICON + BADGE (goes in header)*/
  
 .cart-btn {
   position: relative;
@@ -56,9 +47,7 @@
 }
  
  
-/* =============================================
-   DARK OVERLAY — behind slideout
-   ============================================= */
+/* DARK OVERLAY  */
  
 #cart-overlay {
   display: none;
@@ -73,9 +62,7 @@
 }
  
  
-/* =============================================
-   CART SLIDEOUT PANEL
-   ============================================= */
+/* CART SLIDEOUT PANEL */
  
 #cart-slideout {
   position: fixed;

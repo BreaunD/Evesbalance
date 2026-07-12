@@ -157,9 +157,7 @@ p{
   line-height: 1.6;
 }
  
-/* =============================================
-   PRODUCT GRID
-   ============================================= */
+/* PRODUCT GRID */
  
 .products-section {
   padding: 30px 20px 60px;
@@ -175,9 +173,7 @@ p{
   background-color: transparent;
 }
  
-/* =============================================
-   PRODUCT CARD
-   ============================================= */
+/* PRODUCT CARD */
  
 .product-card {
   border-radius: 10px;
@@ -211,9 +207,7 @@ p{
   transition: filter 0.3s ease;
 }
  
-/* =============================================
-   SOLD OUT STATE
-   ============================================= */
+/* SOLD OUT STATE */
  
 .product-card.sold-out .product-img-wrap img {
   filter: grayscale(80%) brightness(0.6);
@@ -241,9 +235,7 @@ p{
   border: 1px solid rgba(255,255,255,0.2);
 }
  
-/* =============================================
-   PRODUCT INFO
-   ============================================= */
+/* PRODUCT INFO */
  
 .product-info {
   padding: 16px;

@@ -1,6 +1,5 @@
-// =============================================
+
 // SLIDESHOW — fixed timer stacking bug
-// =============================================
 
 let slideIndex = 0;
 let slideTimer = null; // store timer so we can clear it before resetting

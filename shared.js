@@ -1,6 +1,4 @@
-// =============================================
 // FALLING LEAVES — fade in on spawn, fade out on fall
-// =============================================
 
 const leafContainer = document.getElementById('leaf-container');
 
@@ -36,9 +34,7 @@ function createLeaf() {
 // Spawn a leaf every 1.5s — was 1s before, slightly less dense feels cleaner
 setInterval(createLeaf, 1500);
 
-// =============================================
-// CART — localStorage based, no backend needed
-// =============================================
+// CART — localStorage based
  
 // Cart data structure:
 // [{ id, name, price, quantity }]
@@ -100,10 +96,7 @@ function getCartCount() {
   return getCart().reduce((sum, item) => sum + item.quantity, 0);
 }
  
- 
-// =============================================
 // CART BADGE — updates the number on the icon
-// =============================================
  
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');

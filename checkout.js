@@ -1,10 +1,4 @@
-// =============================================
-// CHECKOUT.JS — Eve's Balance
-// Renders order summary + Square redirect
-// with pre-filled cart total via URL param
-// =============================================
 
-// ⬇ REPLACE with Eve's actual Square Payment Link
 // Square Dashboard → Online Checkout → Payment Links → Take a Payment
 const SQUARE_PAYMENT_LINK = 'https://square.link/u/vCyeAz49';
 

@@ -59,8 +59,6 @@ body {
   background-color: transparent;
 }
  
-
-
 .cart-btn {
   background: none;
   border: none;
@@ -106,9 +104,7 @@ p {
   font-size: 24px;
 }
 
-/* =============================================
-   SLIDESHOW
-   ============================================= */
+/* SLIDESHOW */
 .slide-show {
   position: relative;
   width: 100vw;
@@ -143,9 +139,7 @@ button.prev, button.next {
 .prev { left: 0; }
 .next { right: 0; }
 
-/* =============================================
-   HERO CTA
-   ============================================= */
+/* HERO CTA */
 .hero-cta {
   padding: 60px 20px 40px;
   text-align: center;
@@ -204,9 +198,7 @@ button.prev, button.next {
   color: #253c2e;
 }
 
-/* =============================================
-   SERVICES SECTION
-   ============================================= */
+/*  SERVICES SECTION */
 .services-section {
   padding: 40px 20px;
   background-color: transparent;
@@ -242,9 +234,7 @@ button.prev, button.next {
   background-color: transparent;
 }
 
-/* =============================================
-   GALLERY SECTION
-   ============================================= */
+/* GALLERY SECTION */
 .gallery-section {
   padding: 40px 20px;
   background-color: transparent;
@@ -272,9 +262,7 @@ button.prev, button.next {
   transform: scale(1.03);
 }
 
-/* =============================================
-   FALLING LEAVES
-   ============================================= */
+/* FALLING LEAVES */
 #leaf-container {
   position: fixed;
   top: 0;
