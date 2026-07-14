@@ -281,7 +281,7 @@ html, body {
     height: auto;
     width: 90vw;
     max-width: 350px;
-    margin-bottom: 0;
+    margin-bottom: -10;
   }
 
   .header-left {
