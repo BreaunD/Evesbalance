@@ -279,9 +279,8 @@ html, body {
 
    .logo {
     height: auto;
-    max-height: 150px;
-    width: auto;
-    max-width: 80vw;
+    width: 80vw;
+    max-width: 300px;
     margin-bottom: 0;
   }
 
