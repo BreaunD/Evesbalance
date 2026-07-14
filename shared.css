@@ -1,4 +1,8 @@
-
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+ 
  /* CART ICON + BADGE (goes in header)*/
  
 .cart-btn {
@@ -263,20 +267,22 @@
   }
 
   .logo-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
     position: relative;
     left: auto;
     transform: none;
   }
 
    .logo {
-    height: 150px;
+    height: auto;
+    max-height: 150px;
+    width: auto;
+    max-width: 90vw;
     margin-bottom: 0;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
   }
 
   .header-left {
