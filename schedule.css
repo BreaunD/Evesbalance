@@ -162,3 +162,38 @@ p {
     opacity: 0;
   }
 }
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    gap: 10px;
+  }
+
+  .logo-container {
+    width: 500%;
+    max-width: 100vw;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
+   .logo {
+    height: auto;
+    width: 90vw;
+    max-width: 350px;
+    margin-bottom: -10;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right {
+    justify-content: center;
+    width: 100%;
+  }
+}
